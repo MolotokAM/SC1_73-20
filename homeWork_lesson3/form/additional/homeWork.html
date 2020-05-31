@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>form</title>
+</head>
+
+<body>
+    <h1 align="center">Заполните анкету</h1>
+    <fieldset>
+        <legend>Личные данные</legend>
+        <form action="http://sc.it-academy.by/fe/form.php" name="name" method="post" target="_blank">
+            <input type="text" name="s" id="s" required autofocus="name" placeholder="Фамилия" size="25"
+                pattern="^[А-Яа-яЁё]{1,25}[^\s]"><label for="s">text: Только кириллица, без пробелов, длина поля 25,
+                обязательное поле, автофокус на данном поле.</label><br>
+            <input type="text" name="n" id="n" required placeholder="Имя" size="25"
+                pattern="^[А-Яа-яЁё]{1,20}[^\s]"><label for="n">text: Только кириллица, без пробелов, длина поля 20,
+                обязательное поле.</label><br>
+            <input type="text" name="p" id="p" required size="25" placeholder="Отчество"
+                pattern="^[А-Яа-яЁё]{1,24}[^\s]"><label for="p">text: Только кириллица, без пробелов, длина поля 24,
+                обязательное поле.</label><br>
+            <legend>Паспортные данные</legend>
+            <div>text: Серия - только заглавные две латинские буквы с длиной 2 и максимальным количеством символов 2,
+                количеством букв не менее 2, обязательное поле. <br> text: Номер паспорта - только цифры с длиной 7 и
+                максимальным количеством символов 7, количеством цифр не менее 7, обязательное поле.</div> <br>
+            <input type="text" name="seriespass" required placeholder="AA" size="5" pattern="[A-Z]{2,2}">
+            <input type="text" name="numberpass" required placeholder="1234567" pattern="[0-9]{7,7}">
+            <legend>Дата рождения</legend>
+            <input type="text" name="data" id="data" placeholder="2000" size="7" pattern="[0-9]{4,4}"><label
+                for="data">text: Год рождения 4-е цифры</label><br>
+            <select name="month" id="month">
+                <option value="1">Январь</option>
+                <option value="2">Февраль</option>
+                <option value="3">Март</option>
+                <option value="4">Апрель</option>
+                <option value="5">Май</option>
+                <option value="6">Июнь</option>
+                <option value="7">Июль</option>
+                <option value="8">Август</option>
+                <option value="9">Сентябрь</option>
+                <option value="10">Октябрь</option>
+                <option value="11">Ноябрь</option>
+                <option value="12">Декабрь</option>
+            </select><label for="month">select: Месяц рождения</label><br>
+            <input type="number" min="1" max="31" name="number" id="number"><label for="number">number: Диапазон от 1 до
+                31 с шагом 1.</label><br>
+            <select name="country" id="country">
+                <option value="1">РБ</option>
+                <option value="2">РФ</option>
+                <option value="3">AU</option>
+                <option value="4">GW</option>
+            </select><label for="country">(Национальность - выбор одного значения из списка, обязательное
+                поле).</label><br>
+            <div align="left">Адрес: <br>
+                <textarea name="address" cols="17" rows="3"></textarea>
+            </div>
+        </form>
+    </fieldset>
+    <fieldset>
+        <legend>Интересы</legend>
+        <form action="http://sc.it-academy.by/fe/form.php" name="ollhobby" method="post" target="_blank">
+            <fieldset>
+                <legend>arry: Хобби</legend>
+                <form action="http://sc.it-academy.by/fe/form.php" name="hobby" method="post" target="_blank">
+                    <input type="checkbox" name="check1" value="submit">Рыбалка<br>
+                    <input type="checkbox" name="check2" value="submit">Астрономия<br>
+                    <input type="checkbox" name="check3" value="submit">Дайвинг<br>
+                    <input type="checkbox" name="check4" value="submit">Марки<br>
+                </form>
+            </fieldset>
+            <fieldset>
+                <legend>Домашние животные (возможность выбора нескольких вариантов)</legend>
+                <div>arry: select multiple</div>
+                <form action="http://sc.it-academy.by/fe/form.php" name="animals" method="post" target="_blank">
+                    <select name="animals" size="3" multiple>
+                        <optgroup label="Попугаи">
+                            <option value="1">Волнистый</option>
+                            <option value="2">Ара</option>
+                            <option value="3">Неразлучник</option>
+                        </optgroup>
+                        <optgroup label="Рыба">
+                            <option value="4">Карась</option>
+                            <option value="5">Окунь</option>
+                            <option value="6">Осётр</option>
+                        </optgroup>
+                        <optgroup label="Птицы">
+                            <option value="7">Стая ворон</option>
+                            <option value="8">Аист</option>
+                            <option value="9">Архечего</option>
+                        </optgroup>
+                    </select>
+                </form>
+            </fieldset>
+        </form>
+    </fieldset>
+    <fieldset>
+        <legend>Данные для входа и восстановления пароля</legend>
+        <form action="http://sc.it-academy.by/fe/form.php" name="input" method="post" target="_blank">
+            <input type="text" id="login" id="login" name="login" size="20" autocomplete="on" required
+                placeholder="Логин" pattern="^[A-Za-z]{5,}[^\s]"><label for="login">text: Только латиница, без пробелов,
+                не менее 5 символов, длина поля 20, обязательное поле.</label><br>
+            <input type="password" id="password" name="password" size="20" required autocomplete="off"
+                placeholder="Пароль" pattern="^[A-Za-z]{10,}[^\s]"><label for="password">password: Только латиница, без
+                пробелов, не менее 10 символов, длина поля 20, обязательное поле, отключить автозаполнение</label><br>
+        </form>
+    </fieldset>
+    <fieldset>
+        <legend>Координаты</legend>
+        <form action="http://sc.it-academy.by/fe/form.php" name="coordinates" method="post" target="_blank">
+            <input type="email" id="email" placeholder="введите адрес почты"><label for="email">e-mail: проверка должна
+                осущствляться при помощи новых атрибутов тега &#60;input&#62;</label><br>
+            <input type="url" id="url" placeholder="введите адрес сайта"><label for="url">url: проверка должна
+                осущствляться при помощи новых атрибутов тега &#60;input&#62;</label>
+        </form>
+    </fieldset>
+    <fieldset>
+        <legend>Цифры</legend>
+        <form action="http://sc.it-academy.by/fe/form.php" name="figures" method="post" target="_blank">
+            <input type="number" name="number1" id="number1" min="-2.5" max="2.5" step="0.1"><label
+                for="number1">number: Диапазон от -2,5 до 2,5 с шагом 0,1</label><br>
+            <input type="range" min="1" max="10" id="range"><label for="range">range: Максимальное 10 минимальное
+                1</label><br>
+        </form>
+    </fieldset>
+    </form>
+    </fieldset>
+    <fieldset>
+        <legend>Кнопки управления</legend>
+        <form action="http://sc.it-academy.by/fe/form.php" name="button" method="post" target="_blank">
+            <input type="submit" value="Отправить">
+            <input type="reset" value="Сбросить"><br>
+            <!-- не уверен в этом решении, по поводу неактивной кнопки. Только через disabled придумал, или JS подключать... -->
+            <button disabled><img src="mail.jpg" alt="E-mail"></button><label for="nothing">-при нажатии на эту кнопку
+                ничего не происходит</label>
+        </form>
+</body>
+
+</html>
