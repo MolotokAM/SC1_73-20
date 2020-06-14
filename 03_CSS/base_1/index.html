@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Спрайты</title>
+</head>
+
+<body>
+
+    <style>
+        .mn,
+        .ts,
+        .wd,
+        .th,
+        .fr,
+        .st {
+            background-color: #F0F0F0;
+            border: 1px solid black;
+            padding: 2px;
+            border-radius: 5px;
+            color: #666666;
+            width: 100px;
+            height: 20px;
+            float: left;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .breakfast,
+        .lunch,
+        .dinner {
+            background-color: #F0F0F0;
+            border: 1px solid black;
+            padding: 2px;
+            border-radius: 5px;
+            color: #666666;
+            width: 95px;
+            height: 20px;
+            display: none;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .wd:hover .breakfast {
+            display: block;
+            position: absolute;
+            top: 100%;
+            z-index: 1;
+        }
+
+        .wd:hover .lunch {
+            display: block;
+            position: absolute;
+            top: 200%;
+            z-index: 1;
+        }
+
+        .wd:hover .dinner {
+            display: block;
+            position: absolute;
+            top: 300%;
+            z-index: 1;
+        }
+
+        @media all and (max-width: 655px) {
+
+            .breakfast,
+            .lunch,
+            .dinner {
+                display: none;
+                left: 50%;
+                top: 10%
+            }
+
+            .mn,
+            .ts,
+            .wd,
+            .th,
+            .fr,
+            .st {
+                float: none;
+            }
+        }
+
+        }
+    </style>
+    </head>
+
+    <body>
+        <div class="mn">Понедельник</div>
+        <div class="ts">Вторник</div>
+
+        <div class="wd">Среда
+
+
+            <div class="breakfast">Завтрак</div>
+            <div class="lunch">Обед</div>
+            <div class="dinner">Ужин</div>
+
+
+        </div>
+
+        <div class="th">Четверг</div>
+        <div class="fr">Пятница</div>
+        <div class="st">Суббота</div>
+
+
+    </body>
+
+</html>
